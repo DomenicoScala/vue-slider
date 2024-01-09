@@ -88,6 +88,9 @@ createApp({
             changeSlide(indexThumb){
                 this.counterSlide = indexThumb;
             }
+        },
+        mounted(){
+            setInterval(this.nextSlide, 3000);
         }
         
     }).mount('#app')
