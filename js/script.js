@@ -55,8 +55,8 @@ createApp({
                     }
                 ],
 
-                counterSlide: 0
-                
+                counterSlide: 0,
+                autoPlay : null
             };
         },
         methods:{
@@ -87,10 +87,17 @@ createApp({
             },
             changeSlide(indexThumb){
                 this.counterSlide = indexThumb;
+            },
+            handleMouseEnterOnSlider(){
+                clearInterval(this.autoPlay)
+                this.autoPlay = null
+            },
+            handleMouseLeaveOnSlider(){
+                this.autoPlay = setInterval(this.nextSlide, 3000);
             }
         },
         mounted(){
-            setInterval(this.nextSlide, 3000);
+           this.autoPlay = setInterval(this.nextSlide, 3000);
         }
         
     }).mount('#app')
