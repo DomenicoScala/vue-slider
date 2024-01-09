@@ -84,6 +84,9 @@ createApp({
                 else{
                     return '';
                 }
+            },
+            changeSlide(indexThumb){
+                this.counterSlide = indexThumb;
             }
         }
         
